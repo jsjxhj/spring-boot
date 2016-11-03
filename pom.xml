@@ -19,6 +19,7 @@
 
     <modules>
         <module>springboot01</module>
+        <module>springboot02</module>
     </modules>
 
     <repositories>
