@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class SampleController {
+    /**
+     * Spring4之前，用@Controller + @ResponseBody来配合返回json
+     * Spring4开始 @RestController默认返回json
+     * @return
+     */
     @ResponseBody
     @RequestMapping(value="/hello")
     public String home(){
