@@ -1,19 +1,11 @@
-package com.owen.springboot.springboot01.hello;
+package com.owen.springboot.springboot01.hello.controller;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Created by owen on 2016/10/19.
- * @SpringBootApplication 相当于 @Configuration、@ComponentScan和@EnableAutoConfiguration
- */
 @Controller
-@SpringBootApplication
 public class SampleController {
     @ResponseBody
     @RequestMapping(value="/hello")
@@ -29,7 +21,4 @@ public class SampleController {
         return "index";
     }
 
-    public static void main(String[] args){
-        SpringApplication.run(SampleController.class, args);
-    }
 }

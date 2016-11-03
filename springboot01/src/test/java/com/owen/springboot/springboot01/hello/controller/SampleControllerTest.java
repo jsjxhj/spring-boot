@@ -1,10 +1,9 @@
-package com.owen.springboot.springboot01;
+package com.owen.springboot.springboot01.hello.controller;
 
-import com.owen.springboot.springboot01.hello.SampleController;
+import com.owen.springboot.springboot01.hello.controller.SampleController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockServletContext;
