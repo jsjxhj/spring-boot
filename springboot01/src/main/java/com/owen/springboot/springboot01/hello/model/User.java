@@ -1,18 +1,23 @@
 package com.owen.springboot.springboot01.hello.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * Created by owen on 2016/11/3.
  */
 public class User {
-    private Long id;
+    @ApiModelProperty(value = "用户编码", example = "0000001")
+    private String id;
+    @ApiModelProperty(value = "用户姓名", example = "zhangsan")
     private String name;
+    @ApiModelProperty(value = "用户年龄", example = "20")
     private Integer age;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

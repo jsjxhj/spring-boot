@@ -1,6 +1,5 @@
 package com.owen.springboot.springboot01.hello.controller;
 
-import com.owen.springboot.springboot01.hello.controller.SampleController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,6 +14,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
@@ -32,9 +32,16 @@ public class SampleControllerTest {
     }
 
     @Test
-    public void getHello() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
+    public void testHello() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/hello").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Hello World!")));
+                .andExpect(content().string(equalTo("Hello Spring Boot!")));
+    }
+
+    @Test
+    public void testIndex() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/"))
+                .andExpect(forwardedUrl("/index"))
+                .andExpect(status().isOk());
     }
 }
