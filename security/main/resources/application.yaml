@@ -1,0 +1,32 @@
+spring:
+    datasource:
+        url: jdbc:mysql://58.210.110.136:13306/test_owen?useSSL=false&amp;autoReconnect=true
+        username: root
+        password: Sport123321*
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        hikari:
+            #从连接池中获取一个连接的最大等待时间
+            connection-timeout: 5000
+            #连接池校验一个连接是否活着的最大等待时间
+            validation-timeout: 3000
+            #连接在连接池中的最大空闲时间
+            idle-timeout: 600000
+            #连接在连接池中的最大生存时间
+            max-lifetime: 1800000
+            #连接池中最大连接数量，包括空闲的和正在使用的
+            maximum-pool-size: 20
+            #连接池中最小空闲连接数
+            minimum-idle: 10
+    jpa:
+        hibernate:
+            #update 当实体类的属性变化时,表结构跟着更新
+            #create 启动的时候重新生成表,之前的数据会被清除
+            #create-drop 启动时根据实体生成表,但sessionFactory关闭时候被删除
+            #validate 启动的时候验证实体类和数据表是否一致
+            #none 什么都不做.
+            ddl-auto: update
+        show-sql: true  #控制台打印真实sql
+    jackson:
+        serialization:
+            indent_output: true  #格式化输出的json字符串
